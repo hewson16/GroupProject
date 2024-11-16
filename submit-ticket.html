@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Submit Ticket</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="column-left"></div>
+        <div class="column-center">
+            <h1>Submit a Ticket</h1>
+            <!--Navigation Bar-->
+            <div class="nav bar">
+                <a href="index.html">Homepage</a>
+                <a href="spin-wheel.html">Spin The Wheel</a>
+                <a href="community.html">Community</a>
+                <a href="profile.html">Profile</a>
+                <a href="submit-ticket.html">Submit a Ticket</a>
+                <a href="settings.html">Settings</a>
+            </div>
+
+            <div class="form-container">
+                <h1>Submit a Ticket</h1>
+                <form id="ticketForm">
+                    <label for="requestType">Request Type:</label>
+                    <select id="requestType" name="requestType">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+        
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+        
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+        
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="column-right"></div>
+    </div>
+
+    
+    <script src="submit-ticket.js"></script>
+</body>
+</html>
