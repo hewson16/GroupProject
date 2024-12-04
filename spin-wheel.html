@@ -1,34 +1,39 @@
 <!DOCTYPE html>
     <header>
         <title>Spin the Wheel - GAME</title>
-        <link href="css/style.css" rel="stylesheet">
-    </header>
-    <body>
-        <div class="container">
-            <div class="column-left"></div>
-            <div class="column-center">
-                <h1>Spin the Wheel</h1>
-                <!--Navigation Bar-->
-                <div class="nav bar">
-                    <a href="index.html">Homepage</a>
-                    <a href="spin-wheel.html">Spin The Wheel</a>
-                    <a href="community.html">Community</a>
+        <link href="css/style.css" rel="stylesheet">        
+</head>
+<body>
+    <div class="container">
+        <div class="column-left"></div>
+        <div class="column-center">
+            <h1>Homepage</h1>
+            <!--Navigation Bar-->
+            <div class="nav-bar">
+                <a href="index.html">Homepage</a>
+                <a href="spin-wheel.html">Spin The Wheel</a>
+                <a href="community.html">Community</a>
+                <div class="dropdown">
                     <a href="profile.html">Profile</a>
-                    <a href="submit-ticket.html">Submit a Ticket</a>
-                    <a href="settings.html">Settings</a>
-                </div>
-    
-                <!--Block of Text-->
-                <div class="main-text">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae, 
-                        pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
-                    </p>
+                    <div class="dropdown-content">
+                        <a href="user-profile.html">User Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="submit-ticket.html">Submit a Ticket</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="column-right"></div>
+
+            <!--Block of Text-->
+            <div class="main-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae, 
+                    pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
+                </p>
+            </div>
         </div>
-        <script src="js/spin-wheel.js"></script>
-    </body>
+        
+        <div class="column-right"></div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
 </html>

@@ -1,20 +1,39 @@
 <!DOCTYPE html>
     <header>
         <title>Settings - GAME</title>
-        <link href="css/style.css" rel="stylesheet">
-    </header>
-    <body>
-        <h1>Settings</h1>
-        <!--Navigation Bar-->
-        <div class="nav bar">
-            <a href="index.html">Homepage</a>
-            <a href="spin-wheel.html">Spin The Wheel</a>
-            <a href="community.html">Community</a>
-            <a href="profile.html">Profile</a>
-            <a href="submit-ticket.html">Submit a Ticket</a>
-            <a href="settings.html">Settings</a>
-        </div>
+        <link href="css/style.css" rel="stylesheet">        
+</head>
+<body>
+    <div class="container">
+        <div class="column-left"></div>
+        <div class="column-center">
+            <h1>Homepage</h1>
+            <!--Navigation Bar-->
+            <div class="nav-bar">
+                <a href="index.html">Homepage</a>
+                <a href="spin-wheel.html">Spin The Wheel</a>
+                <a href="community.html">Community</a>
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <div class="dropdown-content">
+                        <a href="user-profile.html">User Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="submit-ticket.html">Submit a Ticket</a>
+                    </div>
+                </div>
+            </div>
 
-        <script src="js/settings.js"></script>
-    </body>
+            <!--Block of Text-->
+            <div class="main-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae, 
+                    pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
+                </p>
+            </div>
+        </div>
+        
+        <div class="column-right"></div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
 </html>
