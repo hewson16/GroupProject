@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-   
+
     <title>Community - GAME</title>
     <style>
         /* General Styles */
@@ -69,6 +69,14 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
         }
 
         .comment-list .comment .comment-actions button {
@@ -88,6 +96,10 @@
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        .comment-form input[type="file"] {
+            margin: 10px 0;
         }
 
         .comment-form button {
@@ -122,9 +134,13 @@
         </section>
         <section class="comment-section">
             <h2>Community Posts</h2>
-            <div id="comment-list" class="comment-list"></div>
+            <div id="comment-list" class="comment-list">
+                <!-- Dynamically added comments will appear here -->
+            </div>
             <div class="comment-form">
+                <h3>Add a Post</h3>
                 <textarea id="comment-input" placeholder="Share your thoughts..." rows="4"></textarea>
+                <input type="file" id="image-input" accept="image/*">
                 <button id="submit-comment">Post</button>
             </div>
         </section>
