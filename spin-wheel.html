@@ -9,7 +9,7 @@
     <div class="container">
         <div class="column-left"></div>
         <div class="column-center">
-            <h1>Case Opener</h1>
+            <h1 id="wheelh1">Credit Wheel</h1>
             <!--Navigation Bar-->
             <div class="nav-bar">
                 <a href="index.html">Homepage</a>
@@ -24,17 +24,44 @@
                     </div>
                 </div>
             </div>
-            <div class="case-opening-animation">
-                <button id="case-open-button">Open Case</button>
-                <div id="case-animation">
-                    <!-- Placeholder for the case-opening animation -->
-                    <div id="prize-box" style="display: none;">🎉</div>
+            <!--Prize wheel section-->
+                <div class="wheelcontainer">
+                    <div class="spinBtn">Spin</div>
+                    <div class="wheel">
+                        <div class="number" style="--i:1;--clr:#B0B0B0;
+                        "><span>1</span></div>
+                        <div class="number" style="--i:2;--clr:#7FAFD4;
+                        "><span>5</span></div>
+                        <div class="number" style="--i:3;--clr:#4B82C3;
+                        "><span>10</span></div>
+                        <div class="number" style="--i:4;--clr:#9B59B6;
+                        "><span>50</span></div>
+                        <div class="number" style="--i:5;--clr:#E84393;
+                        "><span>100</span></div>
+                        <div class="number" style="--i:6;--clr:#7FAFD4;
+                        "><span>5</span></div>
+                        <div class="number" style="--i:7;--clr:#B0B0B0;
+                        "><span>1</span></div>
+                        <div class="number" style="--i:8;--clr:#7FAFD4;
+                        "><span>5</span></div>
+                    </div>
                 </div>
-            </div>
+                <script>
+                    let wheel = document.querySelector('.wheel');
+                    let spinBtn = document.querySelector('.spinBtn');
+                    let value = Math.ceil(Math.random() * 3600);
+            
+                    spinBtn.onclick = function(){
+                        wheel.style.transform = "rotate(" + value + "deg)"
+                        value += Math.ceil(Math.random() * 3600);
+                    }
+                </script>
+            </body>
+            </html>            
             
         <div class="column-right"></div>
     
-    <script src="js/spin-wheel.js"></script>
+    <!--<script src="js/spin-wheel.js"></script> -->
 
 </body>
 </html>
