@@ -1,41 +1,98 @@
-console.log('spun the wheel');
-
-// Define items and their odds
-const items = [
-    { name: "Endless riches", image: "gold", odds: 5 },  // 5% chance
-    { name: "A fake firearm", image: "silver-trophy.png", odds: 15 }, // 15% chance
-    { name: "1 Robux", image: "bronze-trophy.png", odds: 30 }, // 30% chance
-    { name: "Nothing!", image: "consolation.png", odds: 50 } // 50% chance
-];
-
-function openCase() {
-    // Calculate total odds
-    const totalOdds = items.reduce((sum, item) => sum + item.odds, 0);
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("case-open-button");
+    const prizeBox = document.getElementById("prize-box");
     
-    // Generate a random number between 0 and totalOdds
-    const random = Math.random() * totalOdds;
-    let cumulative = 0;
+    // Create a countdown display
+    const cooldownDisplay = document.createElement("div");
+    cooldownDisplay.style.marginTop = "10px";
+    cooldownDisplay.style.fontSize = "16px";
+    cooldownDisplay.style.color = "red";
+    cooldownDisplay.style.height = "20px"; // Ensure a consistent height
+    cooldownDisplay.textContent = ""; // Start empty
+    button.parentNode.insertBefore(cooldownDisplay, button.nextSibling); // Add it below the button
 
-    // Determine which item is won
-    for (const item of items) {
-        cumulative += item.odds;
-        if (random < cumulative) {
-            displayResult(item);
-            return;
+    // Array of prizes
+    const prizes = [
+        { emoji: "💰", text: "Prize!" },
+        { emoji: "❌", text: "" },
+        { emoji: "❌", text: "" },
+        { emoji: "❌", text: "" },
+    ];
+
+    let cooldown = false; // Cooldown flag
+
+    button.addEventListener("click", () => {
+        if (cooldown) {
+            console.log("Please wait for the cooldown to finish!");
+            return; // Exit if cooldown is active
         }
-    }
-}
 
-function displayResult(item) {
-    const resultImage = document.getElementById("result-image");
-    const resultText = document.getElementById("result-text");
+        // Set cooldown to true and disable the button
+        cooldown = true;
+        button.disabled = true;
 
-    resultImage.src = item.image;
-    resultImage.style.display = "block";
-    resultText.textContent = `You won: ${item.name}!`;
-}
+        // Start countdown
+        let countdown = 3;
+        cooldownDisplay.textContent = `Cooldown: ${countdown}s`;
 
-// Attach event listener to button
-document.getElementById("open-case-button").addEventListener("click", openCase);
+        const interval = setInterval(() => {
+            countdown--;
+            cooldownDisplay.textContent = countdown > 0 ? `Cooldown: ${countdown}s` : "";
 
+            if (countdown <= 0) {
+                clearInterval(interval);
+                cooldown = false;
+                button.disabled = false;
+                cooldownDisplay.textContent = ""; // Empty text but keep the box visible
 
+                // Cool way for the prize to go away
+                Velocity(prizeBox, {
+                    opacity: 0, // Fade out
+                    scale: 0.5, // Shrink to half size
+                }, {
+                    duration: 1000, // 1 second
+                    easing: "easeInOutCubic",
+                    complete: () => {
+                        prizeBox.style.display = "none"; // Hide the prize box after animation
+                        console.log("Prize has disappeared in a cool way!");
+                    }
+                });
+            }
+        }, 1000);
+
+        // Reset prize box
+        prizeBox.style.opacity = 0;
+        prizeBox.style.transform = "scale(1)";
+        prizeBox.style.display = "none";
+        prizeBox.innerHTML = ""; // Clear any previous prize content
+
+        // Randomly select a prize
+        const prize = prizes[Math.floor(Math.random() * prizes.length)];
+
+        // Display prize (emoji and optional text)
+        prizeBox.innerHTML = `
+            <div style="font-size: 48px;">${prize.emoji}</div>
+            <div style="font-size: 18px; color: green; margin-top: 10px;">${prize.text}</div>
+        `;
+
+        // Show the prize result
+        Velocity(prizeBox, {
+            opacity: 1,
+            scale: [1, 0], // Animate scale from 0 to 1
+        }, {
+            duration: 1000,
+            display: "block",
+            easing: "easeInOutCubic",
+            complete: () => {
+                // Trigger confetti for non-❌ results
+                if (prize.emoji !== "❌") {
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                }
+            }
+        });
+    });
+});

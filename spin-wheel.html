@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <head>
         <title>Spin the Wheel - GAME</title>
-        <link href="css/style.css" rel="stylesheet">        
+        <link href="css/style.css" rel="stylesheet">    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>  
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>  
 </head>
 <body>
     <div class="container">
@@ -22,20 +24,17 @@
                     </div>
                 </div>
             </div>
-
-                <h2>Spin it!</h2>
-                <div class="case-container">
-                    <button id="open-case-button">Open Case</button>
+            <div class="case-opening-animation">
+                <button id="case-open-button">Open Case</button>
+                <div id="case-animation">
+                    <!-- Placeholder for the case-opening animation -->
+                    <div id="prize-box" style="display: none;">🎉</div>
                 </div>
-                <div id="result">
-                    <img id="result-image" src="" alt="Reward" style="display: none;">
-                    <p id="result-text"></p>
-                </div>
-
-        </div>
-        
+            </div>
+            
         <div class="column-right"></div>
-    <script src="JS/spin-wheel.js"></script>
-    <script src="js/index.js"></script>
+    
+    <script src="js/spin-wheel.js"></script>
+
 </body>
 </html>
