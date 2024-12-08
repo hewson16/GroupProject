@@ -26,21 +26,21 @@ spinBtn.onclick = function () {
     }, 100); // Small delay for reset
 };
 
-// Accurate determineResult function
+// Improved determineResult function
 function determineResult(angle) {
     const totalSegments = 8; // Total number of segments on the wheel
     const segmentAngle = 360 / totalSegments; // Each segment covers this angle
-    const offsetAngle = segmentAngle / 2; // Offset to align pointer with the center of the segment
+    const pointerOffset = 0; // Adjust if the pointer isn’t perfectly aligned with 0 degrees
 
     // Normalize the angle to ensure it's between 0 and 360
-    let normalizedAngle = (angle + offsetAngle) % 360;
+    let normalizedAngle = (angle - pointerOffset + 360) % 360;
 
-    // Determine the winning segment (0-based index)
-    const winningSegment = Math.floor(normalizedAngle / segmentAngle);
+    // Handle floating-point rounding issues with a small margin
+    const margin = 0.001;
 
-    // Map the segment index to a prize
+    // Define segment prizes
     const prizes = [
-        "1",   // Segment 0 (starting at 0 degrees)
+        "1",   // Segment 0
         "5",   // Segment 1
         "10",  // Segment 2
         "50",  // Segment 3
@@ -50,7 +50,23 @@ function determineResult(angle) {
         "5"    // Segment 7
     ];
 
-    return prizes[winningSegment];
+    // Determine the winning segment
+    for (let i = 0; i < totalSegments; i++) {
+        const startAngle = i * segmentAngle - margin;
+        const endAngle = (i + 1) * segmentAngle + margin;
+
+        // Log debug information
+        console.log(`Segment ${i}: Start ${startAngle}, End ${endAngle}, Normalized Angle ${normalizedAngle}`);
+
+        // Check if the normalized angle falls within this segment
+        if (normalizedAngle >= startAngle && normalizedAngle < endAngle) {
+            return prizes[i]; // Return the prize for the winning segment
+        }
+    }
+
+    // Fallback in case of unexpected errors
+    console.error("Could not determine the winning segment for angle:", normalizedAngle);
+    return null;
 }
 
 // Function to trigger win effects
@@ -81,6 +97,7 @@ function createFloatingText(text) {
     floatingText.style.color = "gold";
     floatingText.style.textShadow = "2px 2px 10px rgba(0, 0, 0, 0.8)";
     floatingText.style.animation = "float-up 2s ease forwards";
+    floatingText.style.zIndex = "9999"; // Bring text to the very front
 
     document.body.appendChild(floatingText);
 
@@ -104,3 +121,47 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+
+/*
+//MUSIC PLAYBACK STUFF
+
+// Get the audio element
+const backgroundMusic = document.getElementById("background-music");
+
+// Retrieve the saved playback time and mute state from localStorage
+const savedTime = localStorage.getItem("musicPlaybackTime");
+const savedMuted = localStorage.getItem("musicMuted") === "true"; // Convert to boolean
+
+// Restore playback position and mute state
+if (savedTime) {
+    backgroundMusic.currentTime = parseFloat(savedTime);
+}
+backgroundMusic.muted = savedMuted;
+
+// Start playing the music when the page loads
+backgroundMusic.play().catch((error) => {
+    console.error("Autoplay blocked by browser:", error);
+});
+
+// Update the playback time in localStorage periodically
+backgroundMusic.addEventListener("timeupdate", () => {
+    localStorage.setItem("musicPlaybackTime", backgroundMusic.currentTime);
+});
+
+// Add a mute toggle button
+const muteButton = document.getElementById("mute-music");
+updateMuteButton(); // Initialize the button emoji based on mute state
+
+muteButton.onclick = () => {
+    backgroundMusic.muted = !backgroundMusic.muted; // Toggle the mute state
+    localStorage.setItem("musicMuted", backgroundMusic.muted); // Save mute state
+    updateMuteButton(); // Update the button emoji
+};
+
+// Function to update the mute button emoji
+function updateMuteButton() {
+    muteButton.textContent = backgroundMusic.muted ? "🔇" : "🔊"; // Toggle between muted and unmuted icons
+}
+*/
+
