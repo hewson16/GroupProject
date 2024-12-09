@@ -6,7 +6,7 @@ spinBtn.onclick = function () {
     if (spinBtn.disabled) return; // Prevent multiple clicks during spin
 
     spinBtn.disabled = true; // Disable button during spin
-    spinBtn.textContent = "Spinning...";
+    spinBtn.textContent = "...";
     wheel.style.transition = "none"; // Instantly reset animation
     wheel.style.transform = `rotate(${currentValue}deg)`; // Reset to the current angle
 
@@ -20,7 +20,7 @@ spinBtn.onclick = function () {
         setTimeout(() => {
             const result = determineResult(currentValue % 360); // Determine the prize based on angle
             showWinEffect(result); // Trigger visual effects for the win
-            spinBtn.textContent = "Spin Again"; // Reset button text
+            spinBtn.textContent = "Again!"; // Reset button text
             spinBtn.disabled = false; // Re-enable button
         }, 3000); // Match the spin duration
     }, 100); // Small delay for reset
