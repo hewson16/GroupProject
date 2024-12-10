@@ -7,7 +7,7 @@
     <div class="container">
         <div class="column-left"></div>
         <div class="column-center">
-            <h1>Homepage</h1>
+            <h1>Submit a Ticket</h1>
             <!--Navigation Bar-->
             <div class="nav-bar">
                 <a href="index.html">Homepage</a>
@@ -23,12 +23,25 @@
                 </div>
             </div>
 
-            <!--Block of Text-->
-            <div class="main-text">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae, 
-                    pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
-                </p>
+            <!-- Submit Ticket Form -->
+            <div class="form-container">
+                <div class="form-section">
+                    <label for="request-type">Request Type</label>
+                    <select id="request-type" name="request-type">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </select>
+                </div>
+                <div class="form-section">
+                    <label for="subject-title">Subject Title</label>
+                    <input type="text" id="subject-title" name="subject-title" maxlength="50">
+                </div>
+                <div class="form-section">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" maxlength="300"></textarea>
+                </div>
+                <button type="submit">Submit</button>
             </div>
         </div>
         
