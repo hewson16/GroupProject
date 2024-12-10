@@ -20,7 +20,7 @@ spinBtn.onclick = function () {
         setTimeout(() => {
             const result = determineResult(currentValue % 360); // Determine the prize based on angle
             showWinEffect(result); // Trigger visual effects for the win
-            spinBtn.textContent = "Again!"; // Reset button text
+            spinBtn.textContent = "Again"; // Reset button text
             spinBtn.disabled = false; // Re-enable button
         }, 3000); // Match the spin duration
     }, 100); // Small delay for reset
