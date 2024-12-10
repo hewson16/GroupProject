@@ -177,6 +177,76 @@ button:hover {
     background-color: #218838;
 }
 
+/*
+    Community
+*/
+
+/* Comment Section */
+.comment-section {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comment-section h2 {
+    font-size: 24px;
+    color: #00cc00;
+}
+
+.comment-list .comment {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.comment-list .comment .comment-actions button {
+    background: none;
+    border: none;
+    color: #00cc00;
+    cursor: pointer;
+}
+
+.comment-list .comment .comment-actions button:hover {
+    text-decoration: underline;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-form input[type="file"] {
+    margin: 10px 0;
+}
+
+.comment-form button {
+    background-color: #00cc00;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #009900;
+}
 
 
 /*case open stuff*/
