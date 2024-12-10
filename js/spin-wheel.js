@@ -165,3 +165,54 @@ function updateMuteButton() {
 }
 */
 
+//REWARD NOTIFICATION UNDER PROFILE
+
+function showPopupNotification(result) {
+    // Get the right-column div
+    const rightColumn = document.querySelector(".column-right");
+
+    // Create the popup notification div
+    const popup = document.createElement("div");
+    popup.textContent = `🎉 Congrats! You won $${result}`;
+    popup.style.position = "absolute"; // Position it within the right-column
+    popup.style.bottom = "20px"; // Position near the bottom of the column
+    popup.style.right = "20px"; // Slight padding from the right edge
+    popup.style.backgroundColor = "#f9f9f9";
+    popup.style.border = "1px solid #ccc";
+    popup.style.borderRadius = "8px";
+    popup.style.padding = "10px 15px";
+    popup.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+    popup.style.color = "#333";
+    popup.style.fontSize = "14px";
+    popup.style.fontWeight = "bold";
+    popup.style.zIndex = "1000"; // Ensure it is above other content
+    popup.style.opacity = "0"; // Start invisible
+    popup.style.pointerEvents = "none"; // Prevent it from blocking interactions
+    popup.style.animation = "bounceInOut 5s ease forwards"; // Use bounce animation
+
+    // Append the popup to the right-column div
+    rightColumn.appendChild(popup);
+
+    // Remove the popup after the animation ends
+    setTimeout(() => {
+        popup.remove(); // Fully remove the element
+    }, 5000); // Total time: 5 seconds (duration of animation)
+}
+
+// Update the showWinEffect function to call showPopupNotification
+function showWinEffect(result) {
+    console.log("You won: $" + result); // Log the result
+
+    // Trigger confetti
+    confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+
+    // Create and animate floating text
+    createFloatingText("$" + result);
+
+    // Show popup notification
+    showPopupNotification(result);
+}

@@ -385,3 +385,31 @@ button:hover {
     font-size: 0.75em;
     font-weight: 500;
 }
+
+/*Wheel winning notification animation*/
+
+@keyframes bounceInOut {
+    0% {
+        transform: translateY(100%); /* Start off the bottom of the page */
+        opacity: 0; /* Fully invisible */
+    }
+    40% {
+        transform: translateY(-10%); /* Move up slightly past final position */
+        opacity: 1; /* Fully visible */
+    }
+    60% {
+        transform: translateY(5%); /* Bounce back down slightly */
+    }
+    100% {
+        transform: translateY(0); /* Settle into final position */
+        opacity: 1; /* Fully visible */
+    }
+
+    /* Fade out */
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
