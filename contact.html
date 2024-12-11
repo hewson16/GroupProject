@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Contact Us - Horror Roblox Game</title>
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+            color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #f5f5f5;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #1a1a1a;
+            color: #f5f5f5;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #ff4d4d;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e63939;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .success-message, .error-message {
+            display: none;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .success-message {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .error-message {
+            background: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="username">Roblox Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Roblox username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Support">Support</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="success-message" id="successMessage">Thank you for contacting us! We’ll get back to you soon.</div>
+        <div class="error-message" id="errorMessage">Oops! Something went wrong. Please try again later.</div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Horror Roblox Game. All rights reserved.</p>
+    </div>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>
