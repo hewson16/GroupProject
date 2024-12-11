@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Scare Meter Survey</title>
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .scare-meter-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+            background: #2c2c2c;
+            color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .scare-meter-container h2 {
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+
+        .scare-options {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .scare-options label {
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .scare-options input {
+            display: none;
+        }
+
+        .scare-options label:hover {
+            color: #ff8080;
+        }
+
+        .scare-options input:checked + label {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #fff;
+            background: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #e63939;
+        }
+
+        .feedback-message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .feedback-message.success {
+            color: #28a745;
+        }
+
+        .feedback-message.error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="scare-meter-container">
+        <h2>Scare Meter Survey</h2>
+        <p>Rate how scary you found our game:</p>
+        <form id="scareMeterForm">
+            <div class="scare-options">
+                <input type="radio" id="rating-1" name="scareRating" value="1">
+                <label for="rating-1">1</label>
+
+                <input type="radio" id="rating-2" name="scareRating" value="2">
+                <label for="rating-2">2</label>
+
+                <input type="radio" id="rating-3" name="scareRating" value="3">
+                <label for="rating-3">3</label>
+
+                <input type="radio" id="rating-4" name="scareRating" value="4">
+                <label for="rating-4">4</label>
+
+                <input type="radio" id="rating-5" name="scareRating" value="5">
+                <label for="rating-5">5</label>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        <div id="feedbackMessage" class="feedback-message"></div>
+    </div>
+    <script src="js/scaremeter.js"></script>
+</body>
+</html>
