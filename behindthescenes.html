@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
+
     
     <title>Behind the Scenes - GAME</title>
     <link href="css/style.css" rel="stylesheet">
     <style>
         /* Basic styles for sections and media */
         .container {
-            max-width: 800px; /* Narrower layout for a vertical look */
+            max-width: 800px; 
             margin: 0 auto;
             padding: 20px;
             font-family: Arial, sans-serif;
@@ -15,39 +17,51 @@
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section:last-of-type {
+            border-bottom: none; /* Remove border from the last section */
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .section img, .section video {
             width: 100%;
-            max-width: 100%; /* Ensure images fit the vertical layout */
-            margin: 20px 0;
+            max-width: 100%;
+            margin: 30px 0;
             border: 2px solid #ccc;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .text {
-            font-size: 16px;
-            line-height: 1.5;
+            font-size: 18px;
+            line-height: 1.8;
             color: #444;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .gallery {
             display: flex;
-            flex-direction: column; /* Vertical arrangement for multiple images */
-            gap: 20px;
+            flex-direction: column; 
+            gap: 30px;
         }
 
         .gallery img {
             max-width: 100%;
             border: 2px solid #ccc;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -69,6 +83,8 @@
         </section>
 
         <section class="section">
+
+            
             <h2>Monster Behavior</h2>
             <p class="text">The monster uses a custom script to align its actions with the day-night cycle. At night, it actively hunts the player, adding a survival element to the game.</p>
             <img src="images/monstercode1_2024-12-05_at_10.37.40_AM.webp" alt="Monster Code Snippet 1">
@@ -78,23 +94,31 @@
         <section class="section">
             <h2>Dynamic Stamina Bar</h2>
             <p class="text">To add complexity and realism, I implemented a dynamic stamina bar that depletes as the player performs actions, encouraging strategic movement.</p>
-            <img src="stamina-12-10_at_6.48.14_PM.webp" alt="Stamina bar">
+            <img src="images/stamina-12-10_at_6.48.14_PM.webp" alt="Stamina bar">
         </section>
 
         <section class="section">
             <h2>Game Media</h2>
             <p class="text">Check out some screenshots and panoramas of the game setting below:</p>
             <div class="gallery">
-                <img src="images/screenshot1.jpg" alt="Gameplay Screenshot 1">
-                <img src="images/screenshot2.jpg" alt="Gameplay Screenshot 2">
-                <img src="images/panorama.jpg" alt="Game Panorama">
+                <img src="images/view2-12-07_at_4.17.08_PM.webp" alt="Gameplay Screenshot 1">
+                
+                <img src="images/game-12-07_at_3.31.02_PM.webp" alt="Gameplay Screenshot 2">
+                
+                <img src="images/game2-12-07_at_3.41.26_PM.webp" alt="Game Panorama">
             </div>
         </section>
 
         <footer class="header">
             <p>&copy; 2024 GAME Project. All rights reserved.</p>
         </footer>
+        
     </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="js/behindthescenes.js"></script>
 </body>
 </html>
+
+
 
