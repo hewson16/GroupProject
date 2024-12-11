@@ -19,6 +19,18 @@ nav {
     height: 50px;
 }
 
+.button-minimal-primary {
+    background: transparent;
+    border: none; /* Remove border if any */
+    padding: 0; /* Adjust padding if needed */
+    cursor: pointer; /* Keeps the pointer interaction */
+}
+
+.button-minimal-primary:focus {
+    outline: none; /* Remove focus outline if undesired */
+}
+
+
 .text-light {
     color: #e0e0e0; /* Matches text theme */
 }
