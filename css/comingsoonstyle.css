@@ -142,8 +142,4 @@ body {
 
 /*LEFT NAV*/
 
-@media (max-width: 992px) {
-    .main-leftsidebar .menu {
-        flex-direction: row;
-    }
-}
+
