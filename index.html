@@ -1,10 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <title>Homepage - GAME</title>
-    <link href="css/style.css" rel="stylesheet">
     <style>
-        /* Styler for images */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background video container */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Video element styling */
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Toggle Button */
+        .toggle-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            z-index: 3;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            background: rgba(255, 77, 77, 0.8);
+        }
+
+        /* Individual Navigation Buttons */
+        .nav-buttons-container {
+            position: absolute;
+            top: 60px; /* Positioned below the toggle button */
+            left: 15px;
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Add spacing between buttons */
+            z-index: 3;
+        }
+
+        .nav-buttons-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #fff;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-buttons-container a:hover {
+            background: rgba(255, 77, 77, 0.8);
+            transform: scale(1.05);
+        }
+
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+            margin-top: 200px; /* Add space to ensure content starts below the buttons */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        /* Make images slightly transparent by default */
         .content-section img {
             width: 100%;
             max-width: 600px;
@@ -13,8 +110,17 @@
             border: 2px solid #ccc;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0.7; /* Default transparency */
+            transition: opacity 0.3s ease, transform 0.2s ease; /* Smooth transition */
         }
 
+        /* Remove transparency and scale image slightly on hover */
+        .content-section img:hover {
+            opacity: 1; /* Fully visible */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Bottom navigation bar */
         .bottom-nav-bar {
             display: flex;
             justify-content: center;
@@ -38,78 +144,67 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="column-left"></div>
-        <div class="column-center">
-            <h1>Homepage</h1>
-
-            <!-- Nav Bar -->
-            <div class="nav-bar">
-                <a href="index.html">Homepage</a>
-                <a href="spin-wheel.html">Spin The Wheel</a>
-                <a href="community.html">Community</a>
-                <div class="dropdown">
-                    <a href="profile.html">User</a>
-                    <div class="dropdown-content">
-                        <a href="profile.html">Profile</a>
-                        <a href="settings.html">Settings</a>
-                        <a href="submit-ticket.html">Submit a Ticket</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Embed YouTube Video -->
-            <div class="video-section">
-                <h2>Watch the Game Trailer</h2>
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/gIPIyHgFhrY" 
-                        title="Game Trailer" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Content Sections with Images -->
-            <div class="content-section">
-                <img src="images/view2-12-07_at_4.17.08_PM.webp" alt="View 2">
-                <div class="text">Nothing evil could dwell in such a beautiful mountain valley, could it?</div>
-            </div>
-
-            <div class="content-section">
-                <img src="images/view-12-07_at_4.18.19_PM.webp" alt="View 1">
-                <div class="text">Until it turns to night...</div>
-            </div>
-
-            <div class="content-section">
-                <img src="images/game2-12-07_at_3.41.26_PM.webp" alt="Game Screenshot 2">
-                <div class="text">...Because that's when the entity wakes up</div>
-            </div>
-
-            <div class="content-section">
-                <img src="images/game-12-07_at_3.31.02_PM.webp" alt="Game Screenshot 1">
-                <div class="text">Find the Helicopter and get out.</div>
-            </div>
-
-            <div class="content-section">
-                <img src="images/IMG_8421.jpg" alt="Image 8421">
-                <div class="text">Escape the Forest.</div>
-            </div>
-
-            <!-- diff nav Bar -->
-            <div class="bottom-nav-bar">
-                <a href="behindthescenes.html">Behind the Scenes</a>
-                <a href="scaremeter.html">Scare Meter</a>
-                <a href="TOS.html">Terms of Service</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="comingsoon.html">Coming Soon...</a>
-            </div>
-        </div>
-        
-        <div class="column-right"></div>
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay loop muted id="backgroundVideo">
+            <source src="videos/light mode.mp4" type="video/mp4">
+            <!-- Fallback image for browsers that don't support videos -->
+            <img src="images/day-night-cycle-fallback.jpg" alt="Background">
+        </video>
     </div>
-    <script src="js/index.js"></script>
+
+    <!-- Toggle Button -->
+    <button class="toggle-button" id="toggleMode">Switch to Night Mode</button>
+
+    <!-- Individual Navigation Buttons -->
+    <div class="nav-buttons-container">
+        <a href="index.html">Homepage</a>
+        <a href="spin-wheel.html">Spin The Wheel</a>
+        <a href="community.html">Community</a>
+        <a href="profile.html">Profile</a>
+        <a href="settings.html">Settings</a>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content-overlay">
+        <h1>Welcome to the GAME</h1>
+        <p>Escape the forest, survive the night, and uncover the truth.</p>
+
+        <div class="content-section">
+            <img src="images/view2-12-07_at_4.17.08_PM.webp" alt="View 2">
+            <div class="text">Nothing evil could dwell in such a beautiful mountain valley, could it?</div>
+        </div>
+
+        <div class="content-section">
+            <img src="images/view-12-07_at_4.18.19_PM.webp" alt="View 1">
+            <div class="text">Until it turns to night...</div>
+        </div>
+
+        <div class="content-section">
+            <img src="images/game2-12-07_at_3.41.26_PM.webp" alt="Game Screenshot 2">
+            <div class="text">...Because that's when the entity wakes up</div>
+        </div>
+
+        <div class="content-section">
+            <img src="images/game-12-07_at_3.31.02_PM.webp" alt="Game Screenshot 1">
+            <div class="text">Find the Helicopter and get out.</div>
+        </div>
+
+        <div class="content-section">
+            <img src="images/IMG_8421.jpg" alt="Image 8421">
+            <div class="text">Escape the Forest.</div>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="bottom-nav-bar">
+            <a href="behindthescenes.html">Behind the Scenes</a>
+            <a href="scaremeter.html">Scare Meter</a>
+            <a href="TOS.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="comingsoon.html">Coming Soon...</a>
+        </div>
+    </div>
+
+    <script src="js/togglemode.js"></script>
 </body>
 </html>
