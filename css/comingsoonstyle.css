@@ -6,6 +6,7 @@ nav {
     padding: 10px 20px;
     background-color: #1e2a38; /* Dark blue-gray */
     color: #e0e0e0; /* Light gray text */
+    font-size: 20px;
 }
 
 /* Logo and Online Status Group */
@@ -52,7 +53,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0px; /* Space between items */
+    gap: 2px; /* Space between items */
     padding: 5px 10px; /* Adjust padding for desired size */
     background-color: #2c3d53;
     border-radius: 5px; /* Rounded corners */
@@ -61,8 +62,8 @@ nav {
 }
 
 .shilling-icon {
-    width: 25px; /* Adjust icon size */
-    height: 25px;
+    width: 18px; /* Adjust icon size */
+    height: 18px;
 }
 
 
