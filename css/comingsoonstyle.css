@@ -32,12 +32,12 @@ nav {
 
 
 .text-light {
-    color: #e0e0e0; /* Matches text theme */
+    color: #c9d8e8; /* Matches text theme */
+    cursor: default;
 }
 
 .text-success {
-    color: #00ff00; /* Neon green for "online" */
-    font-weight: bold;
+    color: #093; /* Neon green for "online" */
 }
 
 /* Shillings and Profile Group */
@@ -47,19 +47,33 @@ nav {
     gap: 20px; /* Space between shillings and profile */
 }
 
+/* Shillings Box Styling */
+.shillings-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px; /* Space between items */
+    padding: 5px 10px; /* Adjust padding for desired size */
+    background-color: #2c3d53;
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* Text color */
+    cursor: default; /* Pointer interaction */
+}
+
+.shilling-icon {
+    width: 25px; /* Adjust icon size */
+    height: 25px;
+}
+
+
 .shillings {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.shilling-icon {
-    width: 20px;
-    height: 20px;
-}
-
 .shilling-text {
-    font-weight: bold;
+    cursor: default;
 }
 
 .profile-button {
@@ -72,8 +86,8 @@ nav {
 }
 
 .profile-icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-right: 5px;
     border-radius: 50%;
 }
