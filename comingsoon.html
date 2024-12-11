@@ -1,28 +1,45 @@
-<nav>
-    <div id="logo">
-        <button type="button" class="button-minimal-primary">
-            <div class="header-logo">
-                <img src="https://web.archive.org/web/20210415051925/https://www.pvpro.com/img/logo-01.png" height="50px">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/comingsoonstyle.css" rel="stylesheet">
+    <title>CS Duel Navbar</title>
+</head>
+<body>
+    <nav>
+        <!-- Left Section -->
+        <div class="nav-left">
+            <div id="logo">
+                <button type="button" class="button-minimal-primary">
+                    <div class="header-logo">
+                        <img src="https://web.archive.org/web/20210415051925/https://www.pvpro.com/img/logo-01.png" alt="CS Duel Logo">
+                    </div>
+                </button>
             </div>
-        </button>
-    </div>
-    <div class="text-light mr-xl">
-        <span class="text-success">Placehold#</span>
-        Online
-    </div>
-    <div class="shillings">
-        <img src="images/coin.svg" alt="Your Shillings" class="shilling-icon">
-        <span class="shilling-text">Placehold#</span>
-    </div>
-    <div class="profile">
-        <button class="profile-button" id="profileButton">
-            <img src="your-profile-icon.png" alt="Profile Icon" class="profile-icon">
-            <span class="profile-text">Profile</span>
-        </button>
-        <div class="profile-dropdown" id="profileDropdown">
-            <a href="/profile">My Profile</a>
-            <a href="/settings">Settings</a>
-            <a href="/logout">Log Out</a>
+            <div class="text-light">
+                <span class="text-success">Placeholder#</span> Online
+            </div>
         </div>
-    </div>
-</nav>
+    
+        <!-- Right Section -->
+        <div class="nav-right">
+            <div class="shillings">
+                <img src="images/icons8-coin-50.png" alt="Your Shillings" class="shilling-icon">
+                <span class="shilling-text">Placeholder#</span>
+            </div>
+            <div class="profile">
+                <button class="profile-button">
+                    <img src="your-profile-icon.png" alt="Profile Icon" class="profile-icon">
+                    <span>Profile</span>
+                </button>
+                <div class="profile-dropdown">
+                    <a href="/profile">My Profile</a>
+                    <a href="/settings">Settings</a>
+                    <a href="/logout">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>    
+</body>
+</html>

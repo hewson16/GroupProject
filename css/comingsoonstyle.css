@@ -1,0 +1,107 @@
+/* Navbar Styling */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #1e2a38; /* Dark blue-gray */
+    color: #e0e0e0; /* Light gray text */
+}
+
+/* Logo and Online Status Group */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and status */
+}
+
+#logo img {
+    height: 50px;
+}
+
+.text-light {
+    color: #e0e0e0; /* Matches text theme */
+}
+
+.text-success {
+    color: #00ff00; /* Neon green for "online" */
+    font-weight: bold;
+}
+
+/* Shillings and Profile Group */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between shillings and profile */
+}
+
+.shillings {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.shilling-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.shilling-text {
+    font-weight: bold;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2d3b47; /* Slightly lighter blue-gray */
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.profile-dropdown a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+
+.profile-dropdown a:hover {
+    background-color: #444;
+}
+
+/* Dropdown visibility on hover */
+.profile:hover .profile-dropdown {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-right {
+        margin-top: 10px;
+    }
+}
