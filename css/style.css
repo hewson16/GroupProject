@@ -1,84 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
-/* Homepage specifics */
-.content-overlay {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    margin-top: 200px;
-}
-
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.content-section img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin: 10px 0;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0.7;
-    transition: opacity 0.3s ease, transform 0.2s ease;
-}
-
-.content-section img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.bottom-nav-bar {
-    display: flex;
-    justify-content: center;
-    background: #333;
-    padding: 10px 0;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-.bottom-nav-bar a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px 15px;
-    margin: 0 10px;
-}
-
-.bottom-nav-bar a:hover {
-    color: #ff4d4d;
-}
-
-.game-link button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    color: #fff;
-    background: #ff4d4d;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.game-link button:hover {
-    background: #cc0000;
-}
-
 /* Standard background, header, nav-bar for all appropriate webpages */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    color: white;
 }
 
 /* Background video container */
@@ -104,7 +31,7 @@ body, html {
     object-fit: cover;
 }
 
-/* Toggle button */
+/* Toggle Button */
 .toggle-button {
     position: absolute;
     top: 8px;
@@ -120,7 +47,6 @@ body, html {
     z-index: 3;
     transition: background 0.3s ease;
 }
-
 
 .toggle-button:hover {
     background: rgba(255, 77, 77, 0.8);
@@ -141,36 +67,70 @@ body, html {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    color: #fff;
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid #fff;
+    border: 2px solid;
     border-radius: 8px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.nav-buttons-container a:hover {
-    background: rgba(255, 77, 77, 0.8);
-    transform: scale(1.05);
+/* Day Mode Styles */
+body.day-mode {
+    background-color: white;
+    color: black;
 }
 
+.nav-buttons-container.day-mode a, .toggle-button.day-mode {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-color: white;
+}
+
+.nav-buttons-container.day-mode a:hover, .toggle-button.day-mode:hover {
+    background: rgba(255, 77, 77, 0.8);
+}
+
+.container.day-mode .column-center {
+    background-color: white;
+    color: black;
+}
+
+/* Night Mode Styles */
+body.night-mode {
+    background-color: #1c1c1c;
+    color: white;
+}
+
+.nav-buttons-container.night-mode a, .toggle-button.night-mode {
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    border-color: black;
+}
+
+.nav-buttons-container.night-mode a:hover, .toggle-button.night-mode:hover {
+    background: rgba(77, 77, 255, 0.8);
+}
+
+.container.night-mode .column-center {
+    background-color: #333;
+    color: white;
+}
+
+/* General Styles */
 .container {
     display: flex;
-    flex-direction: column;  /* Center align content vertically */
-    align-items: center;  /* Center align content horizontally */
+    flex-direction: column;
+    align-items: center;
     height: 100%;
 }
 
 .column-center {
-    background-color: white;
-    color: black;
     width: 65%;  /* Adjusted width for better alignment */
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
     position: relative;
-    border-radius: 8px;  /* Add border radius for better aesthetics */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Add shadow for better depth */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 10px;
     z-index: 1; /* Ensure it sits above the video background */
@@ -185,8 +145,6 @@ body, html {
 
 .nav-bar a {
     text-decoration: none;
-    color: #fff;
-    background: #333;
     padding: 10px 20px;
     border-radius: 8px;
     transition: background 0.3s ease;
@@ -267,7 +225,6 @@ body, html {
 }
 
 .main-text {
-    color: black;
     font-size: 1.6rem;
 }
 
@@ -296,9 +253,7 @@ body, html {
     line-height: 20rem;
 }
 
-/*
-    Submit a Ticket
-*/
+/* Submit a Ticket */
 .form-container {
     background-color: white;
     padding: 2rem;
@@ -327,7 +282,7 @@ input, select, textarea {
 
 textarea {
     height: 15rem;
-    resize: none;  /* Prevent resizing */
+    resize: none;
 }
 
 button {
@@ -413,9 +368,7 @@ button:hover {
     background-color: #009900;
 }
 
-/*
-    Login 
-*/
+/* Login */
 #login-container {
     position: absolute;
     top: 1rem;
