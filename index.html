@@ -57,11 +57,11 @@
         /* Individual Navigation Buttons */
         .nav-buttons-container {
             position: absolute;
-            top: 60px; /* Positioned below the toggle button */
+            top: 60px;
             left: 15px;
             display: flex;
-            flex-direction: column; /* Stack buttons vertically */
-            gap: 10px; /* Add spacing between buttons */
+            flex-direction: column;
+            gap: 10px;
             z-index: 3;
         }
 
@@ -92,7 +92,7 @@
             color: #fff;
             text-align: center;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-            margin-top: 200px; /* Add space to ensure content starts below the buttons */
+            margin-top: 200px;
         }
 
         h1 {
@@ -100,7 +100,6 @@
             margin-bottom: 20px;
         }
 
-        /* Make images slightly transparent by default */
         .content-section img {
             width: 100%;
             max-width: 600px;
@@ -109,17 +108,15 @@
             border: 2px solid #ccc;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0.7; /* Default transparency */
-            transition: opacity 0.3s ease, transform 0.2s ease; /* Smooth transition */
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.2s ease;
         }
 
-        /* Remove transparency and scale image slightly on hover */
         .content-section img:hover {
-            opacity: 1; /* Fully visible */
-            transform: scale(1.05); /* Slight zoom effect */
+            opacity: 1;
+            transform: scale(1.05);
         }
 
-        /* Bottom navigation bar */
         .bottom-nav-bar {
             display: flex;
             justify-content: center;
@@ -141,29 +138,6 @@
             color: #ff4d4d;
         }
 
-        /* Center YouTube Video */
-        .video-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 20px 0;
-        }
-
-        .video-container iframe {
-            width: 560px;
-            height: 315px;
-            max-width: 100%;
-            border: none;
-        }
-
-        .video-message {
-            margin-top: 10px;
-            font-size: 1.2em;
-            color: #fff;
-        }
-
-        /* Button linking to Roblox */
         .game-link button {
             padding: 15px 30px;
             font-size: 1.2em;
@@ -217,7 +191,8 @@
             <img src="images/view2-12-07_at_4.17.08_PM.webp" alt="View 2">
             <div class="text">Nothing evil could dwell in such a beautiful mountain valley, could it?</div>
         </div>
-div class="content-section">
+
+        <div class="content-section">
             <img src="images/view-12-07_at_4.18.19_PM.webp" alt="View 1">
             <div class="text">Until it turns to night...</div>
         </div>
@@ -251,7 +226,6 @@ div class="content-section">
             <iframe src="https://www.youtube.com/embed/gIPIyHgFhrY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="video-message">Watch THE GAME's trailer</div>
         </div>
-    </div>
     </div>
 
     <script src="js/togglemode.js"></script>
