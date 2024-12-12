@@ -21,8 +21,8 @@
 }
 
 #game-header img {
-    width: 65%;
-    height: 65%;
+    width: 30%; /* Significantly reduced width */
+    height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 0 auto; /* Center the image horizontally */
 }
@@ -450,9 +450,9 @@ button:hover {
 
 /* Login */
 .g-signin2 {
-    top: 5%;
-    right: 1%;
-    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
 
 /* Wheel container */
