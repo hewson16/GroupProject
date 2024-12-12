@@ -215,4 +215,16 @@ function showWinEffect(result) {
 
     // Show popup notification
     showPopupNotification(result);
+
+    const wheel = document.querySelector('.wheel');
+    if (wheel) {
+        wheel.classList.add('color-cycle');
+
+        // Remove the class after 2 seconds to stop the animation
+        setTimeout(() => {
+            wheel.classList.remove('color-cycle');
+        }, 2000);
+    } else {
+        console.error("Wheel element not found.");
+    }
 }
