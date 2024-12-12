@@ -1,24 +1,33 @@
 <!DOCTYPE html>
+<html>
 <head>
-        <title>Spin the Wheel - GAME</title>
-        <link href="css/style.css" rel="stylesheet">    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>  
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-        <audio id="background-music" src="media/How to play jazz in a minute.mp3" loop autoplay></audio>
- 
+    <title>Spin the Wheel - GAME</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <audio id="background-music" src="media/How to play jazz in a minute.mp3" loop autoplay></audio>
 </head>
 <body>
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay loop muted id="backgroundVideo">
+            <source src="videos/light mode.mp4" type="video/mp4">
+            <img src="images/day-night-cycle-fallback.jpg" alt="Background">
+        </video>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-button" id="toggleMode">Switch to Night Mode</button>
+
     <div class="container">
- 
-        <div class="column-left"></div>
+        <div id="login-container"></div> <!-- Google Sign-In button -->
+        <div class="column-center">
             <div id="music-controls">
-            <!-- Mute toggle button -->
+                <!-- Mute toggle button -->
                 <div id="mute-music" style="position: absolute; top: 10px; left: 10px; cursor: pointer; font-size: 24px;">🔊</div>
             </div>
- 
-        <div class="column-center">
             <h1 id="wheelh1">Credit Wheel</h1>
-            <!--Navigation Bar-->
+            <!-- Navigation Bar -->
             <div class="nav-bar">
                 <a href="index.html">Homepage</a>
                 <a href="spin-wheel.html">Spin The Wheel</a>
@@ -27,37 +36,29 @@
                     <a href="profile.html">User</a>
                     <div class="dropdown-content">
                         <a href="profile.html">Profile</a>
-                        <a href="settings.html">Settings</a>
                         <a href="submit-ticket.html">Submit a Ticket</a>
                     </div>
                 </div>
             </div>
-            <!--Prize wheel section-->
-                <div class="wheelcontainer">
-                    <div class="spinBtn">Spin</div>
-                    <div class="wheel">
-                        <div class="number" style="--i:1;--clr:#B0B0B0;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:2;--clr:#7FAFD4;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:3;--clr:#4B82C3;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:4;--clr:#9B59B6;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:5;--clr:#E84393;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:6;--clr:#7FAFD4;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:7;--clr:#B0B0B0;
-                        "><span>?</span></div>
-                        <div class="number" style="--i:8;--clr:#7FAFD4;
-                        "><span>?</span></div>
-                    </div>
-                </div>          
- 
-        <div class="column-right"></div>
- 
+            <!-- Prize wheel section -->
+            <div class="wheelcontainer">
+                <div class="spinBtn">Spin</div>
+                <div class="wheel">
+                    <div class="number" style="--i:1;--clr:#B0B0B0;"><span>?</span></div>
+                    <div class="number" style="--i:2;--clr:#7FAFD4;"><span>?</span></div>
+                    <div class="number" style="--i:3;--clr:#4B82C3;"><span>?</span></div>
+                    <div class="number" style="--i:4;--clr:#9B59B6;"><span>?</span></div>
+                    <div class="number" style="--i:5;--clr:#E84393;"><span>?</span></div>
+                    <div class="number" style="--i:6;--clr:#7FAFD4;"><span>?</span></div>
+                    <div class="number" style="--i:7;--clr:#B0B0B0;"><span>?</span></div>
+                    <div class="number" style="--i:8;--clr:#7FAFD4;"><span>?</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="js/spin-wheel.js"></script>
- 
+    <script src="js/google-signin.js"></script>
+    <script src="js/togglemode.js"></script>
 </body>
 </html>

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>Submit Ticket</title>
-    <link href="css/style.css" rel="stylesheet">        
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay loop muted id="backgroundVideo">
+            <source src="videos/light mode.mp4" type="video/mp4">
+            <img src="images/day-night-cycle-fallback.jpg" alt="Background">
+        </video>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-button" id="toggleMode">Switch to Night Mode</button>
+
     <div class="container">
-        <div class="column-left"></div>
+        <div id="login-container"></div> <!-- Google Sign-In button -->
         <div class="column-center">
             <h1>Submit a Ticket</h1>
-            <!--Navigation Bar-->
+            <!-- Navigation Bar -->
             <div class="nav-bar">
                 <a href="index.html">Homepage</a>
                 <a href="spin-wheel.html">Spin The Wheel</a>
@@ -17,12 +29,10 @@
                     <a href="profile.html">User</a>
                     <div class="dropdown-content">
                         <a href="profile.html">Profile</a>
-                        <a href="settings.html">Settings</a>
                         <a href="submit-ticket.html">Submit a Ticket</a>
                     </div>
                 </div>
             </div>
-
             <!-- Submit Ticket Form -->
             <div class="form-container">
                 <div class="form-section">
@@ -44,9 +54,10 @@
                 <button type="submit">Submit</button>
             </div>
         </div>
-        
-        <div class="column-right"></div>
     </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="js/index.js"></script>
+    <script src="js/google-signin.js"></script>
+    <script src="js/togglemode.js"></script>
 </body>
 </html>

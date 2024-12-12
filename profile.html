@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-    <header>
-        <title>Profile - GAME</title>
-        <link href="css/style.css" rel="stylesheet">
-    </header>
-    <body>
-        <div class="container">
-            <div class="column-left"></div>
-            <div class="column-center">
-                <h1>Profile</h1>
-                <!--Navigation Bar-->
-                <div class="nav-bar">
-                    <a href="index.html">Homepage</a>
-                    <a href="spin-wheel.html">Spin The Wheel</a>
-                    <a href="community.html">Community</a>
-                    <div class="dropdown">
-                        <a href="profile.html">User</a>
-                        <div class="dropdown-content">
-                            <a href="profile.html">Profile</a>
-                            <a href="settings.html">Settings</a>
-                            <a href="submit-ticket.html">Submit a Ticket</a>
-                        </div>
+<html>
+<head>
+    <title>Profile - GAME</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-background">
+        <video autoplay loop muted id="backgroundVideo">
+            <source src="videos/light mode.mp4" type="video/mp4">
+            <img src="images/day-night-cycle-fallback.jpg" alt="Background">
+        </video>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-button" id="toggleMode">Switch to Night Mode</button>
+
+    <div class="container">
+        <div id="login-container"></div> <!-- Google Sign-In button -->
+        <div class="column-center">
+            <h1>Profile</h1>
+            <!-- Navigation Bar -->
+            <div class="nav-bar">
+                <a href="index.html">Homepage</a>
+                <a href="spin-wheel.html">Spin The Wheel</a>
+                <a href="community.html">Community</a>
+                <div class="dropdown">
+                    <a href="profile.html">User</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="submit-ticket.html">Submit a Ticket</a>
                     </div>
                 </div>
-                
-    
-                <!--Block of Text-->
-                <div class="main-text">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae, 
-                        pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
-                    </p>
-                </div>
             </div>
-            
-            <div class="column-right"></div>
+            <!-- Block of Text -->
+            <div class="main-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae,
+                    pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
+                </p>
+            </div>
         </div>
-        <script src="js/profile.js"></script>
-    </body>
+    </div>
+    <script src="js/profile.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/google-signin.js"></script>
+    <script src="js/togglemode.js"></script>
+</body>
 </html>
