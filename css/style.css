@@ -582,3 +582,102 @@ button:hover {
 .color-cycle {
     animation: colorCycle 2s linear infinite;
 }
+
+/* Profile */
+/* Achievements */
+.achievements ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove default padding */
+}
+
+.achievements li {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.achievements input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+}
+
+.profile-section {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    position: relative;
+    margin-right: 20px;
+    width: 100px; /* Explicitly set width */
+    height: 100px; /* Explicitly set height */
+    overflow: hidden; /* Ensure the image stays within the container */
+    border-radius: 50%; /* Make the image circular */
+    border: 0.5rem solid #000; /* Add a border */
+    cursor: pointer;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.profile-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#add-image-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#add-image-btn:hover {
+    background-color: #45a049;
+}
+
+#remove-image-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+#remove-image-btn:hover {
+    background-color: #e31e24;
+}
+
+
+
+
+.display-name,
+.bio,
+.achievements {
+    flex: 1;
+    max-width: calc(100% - 120px); /* Adjust to accommodate the profile picture and padding/margin */
+}
+
+.display-name input,
+.bio textarea {
+    width: 100%; /* Ensure they stay within the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.bio textarea {
+    height: 100px;
+    resize: none;
+}
+

@@ -3,6 +3,27 @@
 <head>
     <title>Profile - Escape the Forest</title>
     <link href="css/style.css" rel="stylesheet">
+
+    <meta name="google-signin-client_id" content="899818300065-sbaloqic4ut4uk4vkfuf2623p1f5h93k.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+        function init() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init({
+                    client_id: '899818300065-sbaloqic4ut4uk4vkfuf2623p1f5h93k.apps.googleusercontent.com'
+                });
+            });
+        }
+        window.onload = init;
+    </script>
 </head>
 <body>
     <!-- Background Video -->
@@ -28,17 +49,46 @@
         <div id="login-container"></div> <!-- Google Sign-In button -->
         <div class="column-center">
             <h1>Profile</h1>
-            <!-- Block of Text -->
-            <div class="main-text">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptas dignissimos aperiam consequatur sit, voluptate beatae,
-                    pariatur ut explicabo nulla aliquid modi quae nihil amet reiciendis sapiente provident praesentium labore.
-                </p>
-            </div>
+            <div class="profile-section">
+                <!-- Profile Picture and Display Name Container -->
+                <div class="profile-header">
+                    <!-- Profile Picture -->
+                    <div class="profile-picture">
+                        <img id="profile-img" src="images/default-profile.png" alt="Profile Picture">
+                        <input type="file" id="profile-img-upload" style="display: none;">
+                        <div class="profile-buttons">
+                            <button id="add-image-btn">Add/Replace</button>
+                            <button id="remove-image-btn">Remove</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Display Name -->
+                    <div class="display-name">
+                        <label for="display-name-input">Display Name:</label>
+                        <input type="text" id="display-name-input" placeholder="Enter your display name">
+                    </div>
+                </div>
 
-            
+                <!-- Achievements -->
+                <div class="achievements">
+                    <h2>Achievements</h2>
+                    <ul>
+                        <li><input type="checkbox" id="achievement1"> <label for="achievement1">Achievement 1</label></li>
+                        <li><input type="checkbox" id="achievement2"> <label for="achievement2">Achievement 2</label></li>
+                        <li><input type="checkbox" id="achievement3"> <label for="achievement3">Achievement 3</label></li>
+                        <!-- Add more achievements as needed -->
+                    </ul>
+                </div>
+
+                <!-- Bio -->
+                <div class="bio">
+                    <label for="bio-input">Bio:</label>
+                    <textarea id="bio-input" placeholder="Write something about yourself..."></textarea>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="js/profile.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="js/google-signin.js"></script>
