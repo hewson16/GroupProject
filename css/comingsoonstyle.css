@@ -166,6 +166,7 @@ body {
     height: auto;
     margin: 15px 0;
     cursor: pointer;
+    padding-top: 10px;
 }
 
 /* Dropdown container - hidden by default */
