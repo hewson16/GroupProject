@@ -448,14 +448,7 @@ button:hover {
     background-color: #009900;
 }
 
-
-
 /* Login */
-#login-container {
-    position: absolute;
-    top: 1rem;
-}
-
 .g-signin2 {
     top: 5%;
     right: 1%;
