@@ -248,6 +248,22 @@ button:hover {
     background-color: #009900;
 }
 
+/*
+    Login 
+*/
+#login-container {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.g-signin2 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+
 
 /*case open stuff*/
 

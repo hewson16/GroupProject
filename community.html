@@ -3,13 +3,15 @@
 <head>
     <title>Community - GAME</title>
     <link href="css/style.css" rel="stylesheet">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 </head>
 <body>
     <div class="container">
-        <div class="column-left"></div>
+        <div class="column-left">
+            <div id="login-container"></div> <!-- Google Sign-In button -->
+        </div>
         <div class="column-center">
             <h1>Community</h1>
-            <!--Navigation Bar-->
             <div class="nav-bar">
                 <a href="index.html">Homepage</a>
                 <a href="spin-wheel.html">Spin The Wheel</a>
@@ -23,7 +25,6 @@
                     </div>
                 </div>
             </div>
-            
             <section class="main-text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
             </section>
@@ -42,6 +43,8 @@
         </div>
         <div class="column-right"></div>
     </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="js/community.js"></script>
+    <script src="js/google-signin.js"></script>
 </body>
 </html>
