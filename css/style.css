@@ -18,25 +18,25 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: flex-start; 
     align-items: center;
     color: #fff;
     text-align: center;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-    margin-top: 0; /* Remove extra margin-top */
-    padding-top: 10px; /* Add padding if needed */
+    margin-top: 0; 
+    padding-top: 10px; 
 }
 
 #game-header {
-    margin-top: 2%; /* Ensure no extra margin pushing the image down */
-    padding-top: 1%; /* Ensure no padding pushing the image down */
+    margin-top: 2%; 
+    padding-top: 1%; 
 }
 
 #game-header img {
-    width: 30%; /* Significantly reduced width */
-    height: auto; /* Maintain aspect ratio */
+    width: 30%; 
+    height: auto; 
     display: block;
-    margin: 0 auto; /* Center the image horizontally */
+    margin: 0 auto; 
 }
 
 .title-header {
@@ -188,28 +188,28 @@ body, html {
 
 .container {
     display: flex;
-    flex-direction: column;  /* Center align content vertically */
-    align-items: center;  /* Center align content horizontally */
-    height: 100vh;  /* Ensure the container takes the full height of the viewport */
-    width: 100%;  /* Ensure the container takes the full width */
+    flex-direction: column; 
+    align-items: center; 
+    height: 100vh;  
+    width: 100%;  
 }
 
 .column-center {
     background-color: var(--background-color);
     color: var(--text-color);
-    width: 65%;  /* Adjusted width for better alignment */
-    max-width: 800px;  /* Added max-width for better control */
+    width: 65%;  
+    max-width: 800px; 
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
     position: relative;
-    border-radius: 8px;  /* Add border radius for better aesthetics */
+    border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Add shadow for better depth */
     text-align: center;
-    z-index: 1; /* Ensure it sits above the video background */
-    flex-grow: 1;  /* Allow the column to grow and fill the available space */
-    display: flex;  /* Enable flexbox layout for internal elements */
-    flex-direction: column;  /* Arrange internal elements vertically */
+    z-index: 1; 
+    flex-grow: 1;
+    display: flex;  
+    flex-direction: column;  
 }
 
 
@@ -612,18 +612,18 @@ li {
 .profile-picture {
     position: relative;
     margin-right: 20px;
-    width: 100px; /* Explicitly set width */
-    height: 100px; /* Explicitly set height */
-    overflow: hidden; /* Ensure the image stays within the container */
-    border-radius: 50%; /* Make the image circular */
-    border: 0.5rem solid #000; /* Add a border */
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden;
+    border-radius: 50%; 
+    border: 0.5rem solid #000; 
     cursor: pointer;
 }
 
 .profile-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+    object-fit: cover;
 }
 
 .profile-buttons-container {
@@ -632,14 +632,14 @@ li {
 }
 
 .profile-button {
-    width: 75px; /* Match width to the profile picture */
+    width: 75px; 
     font-size: 0.5rem;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-bottom: 5px; /* Space between buttons */
+    margin-bottom: 5px; 
 }
 
 #add-image-btn {
@@ -673,8 +673,8 @@ li {
 }
 
 .bio textarea {
-    width: 100%; /* Ensure they stay within the container */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    width: 100%; 
+    box-sizing: border-box;
 }
 
 .bio textarea {
