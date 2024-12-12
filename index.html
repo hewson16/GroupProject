@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Homepage - GAME</title>
     <style>
         body, html {
@@ -141,6 +140,28 @@
         .bottom-nav-bar a:hover {
             color: #ff4d4d;
         }
+
+        /* Center YouTube Video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+
+        .video-container iframe {
+            width: 560px;
+            height: 315px;
+            max-width: 100%;
+            border: none;
+        }
+
+        .video-message {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -202,6 +223,12 @@
             <a href="TOS.html">Terms of Service</a>
             <a href="contact.html">Contact Us</a>
             <a href="comingsoon.html">Coming Soon...</a>
+        </div>
+
+        <!-- YouTube Video Embed -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/gIPIyHgFhrY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-message">Watch THE GAME's trailer</div>
         </div>
     </div>
 
