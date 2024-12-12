@@ -628,18 +628,20 @@ button:hover {
     object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
-.profile-buttons {
+.profile-buttons-container {
+    flex-direction: column;
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
 }
 
-.profile-buttons button {
+.profile-button {
+    width: 75px; /* Match width to the profile picture */
+    font-size: 0.5rem;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-bottom: 5px; /* Space between buttons */
 }
 
 #add-image-btn {
@@ -660,14 +662,12 @@ button:hover {
     background-color: #e31e24;
 }
 
+.display-name {
+    margin-left: 5%;
+}
 
-
-
-.display-name,
-.bio,
 .achievements {
-    flex: 1;
-    max-width: calc(100% - 120px); /* Adjust to accommodate the profile picture and padding/margin */
+    width: 100%;
 }
 
 .display-name input,

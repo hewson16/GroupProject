@@ -6,6 +6,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <audio id="background-music" src="media/How to play jazz in a minute.mp3" loop autoplay></audio>
+
+    <meta name="google-signin-client_id" content="899818300065-sbaloqic4ut4uk4vkfuf2623p1f5h93k.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+        function init() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init({
+                    client_id: '899818300065-sbaloqic4ut4uk4vkfuf2623p1f5h93k.apps.googleusercontent.com'
+                });
+            });
+        }
+        window.onload = init;
+    </script>
 </head>
 <body>
     <!-- Background Video -->

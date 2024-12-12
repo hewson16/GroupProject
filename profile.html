@@ -54,14 +54,16 @@
                 <div class="profile-header">
                     <!-- Profile Picture -->
                     <div class="profile-picture">
-                        <img id="profile-img" src="images/default-profile.png" alt="Profile Picture">
+                        <img id="profile-img" src="images/default-profile.png" alt="">
                         <input type="file" id="profile-img-upload" style="display: none;">
-                        <div class="profile-buttons">
-                            <button id="add-image-btn">Add/Replace</button>
-                            <button id="remove-image-btn">Remove</button>
-                        </div>
                     </div>
                     
+                    <!-- Buttons below the profile picture -->
+                    <div class="profile-buttons-container">
+                        <button class="profile-button" id="add-image-btn">Add/Replace</button>
+                        <button class="profile-button" id="remove-image-btn">Remove</button>
+                    </div>
+
                     <!-- Display Name -->
                     <div class="display-name">
                         <label for="display-name-input">Display Name:</label>
@@ -73,10 +75,14 @@
                 <div class="achievements">
                     <h2>Achievements</h2>
                     <ul>
-                        <li><input type="checkbox" id="achievement1"> <label for="achievement1">Achievement 1</label></li>
-                        <li><input type="checkbox" id="achievement2"> <label for="achievement2">Achievement 2</label></li>
-                        <li><input type="checkbox" id="achievement3"> <label for="achievement3">Achievement 3</label></li>
-                        <!-- Add more achievements as needed -->
+                        <li><input type="checkbox" id="achievement1"> <label for="achievement1">
+                            More to come - Get killed by the Witch</label></li>
+                        <li><input type="checkbox" id="achievement2"> <label for="achievement2">
+                            Survival of the Fittest - Survive for more than 15 minutes
+                        </label></li>
+                        <li><input type="checkbox" id="achievement3"> <label for="achievement3">
+                            Scavenger - Find $50 in one run
+                        </label></li>
                     </ul>
                 </div>
 
