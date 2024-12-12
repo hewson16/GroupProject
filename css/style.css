@@ -14,9 +14,16 @@
     margin-top: 200px;
 }
 
+.title-header {
+    font-size: 1200%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
 h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 400%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .content-section img {
@@ -104,13 +111,14 @@ body, html {
     color: white;
 }
 
+
 /* Toggle button */
 .toggle-button {
     position: absolute;
     top: 1%;  
-    left: 1%; 
-    width: 15%;
-    padding: 1%;  /* Adjusted padding */
+    right: 1%; 
+    width: 14%;
+    padding: 10px 20px;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
     border: 2px solid #fff; 
@@ -128,7 +136,7 @@ body, html {
 /* Individual Navigation Buttons */
 .nav-buttons-container {
     position: absolute;
-    top: 6.25%;
+    top: 1%;
     left: 1%;
     display: flex;
     flex-direction: column;
@@ -157,13 +165,15 @@ body, html {
     display: flex;
     flex-direction: column;  /* Center align content vertically */
     align-items: center;  /* Center align content horizontally */
-    height: 100%;
+    height: 100vh;  /* Ensure the container takes the full height of the viewport */
+    width: 100%;  /* Ensure the container takes the full width */
 }
 
 .column-center {
     background-color: white;
     color: black;
     width: 65%;  /* Adjusted width for better alignment */
+    max-width: 800px;  /* Added max-width for better control */
     padding: 2rem;
     box-sizing: border-box;
     overflow-y: auto;
@@ -171,10 +181,14 @@ body, html {
     border-radius: 8px;  /* Add border radius for better aesthetics */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Add shadow for better depth */
     text-align: center;
-    padding: 10px;
     z-index: 1; /* Ensure it sits above the video background */
+    flex-grow: 1;  /* Allow the column to grow and fill the available space */
+    display: flex;  /* Enable flexbox layout for internal elements */
+    flex-direction: column;  /* Arrange internal elements vertically */
 }
 
+
+/* Comment Section and Forms */
 .main-text, .comment-section {
     margin: 20px 0;
 }
@@ -214,26 +228,55 @@ body, html {
     background: #009900;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
         padding: 10px;
     }
 
     .column-center {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .nav-buttons-container, .toggle-button {
+        width: 100%;
+        left: 0;
+        padding: 5px;
+        top: auto;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-buttons-container {
+        top: auto;
+        bottom: 0;
+        padding: 0;
+    }
+
+    .nav-buttons-container a {
+        padding: 5px;
+        font-size: 80%;
         flex: 1;
         text-align: center;
-        padding: 10px;
     }
 
-    .nav-bar {
-        flex-direction: column;
-        gap: 10px;
+    .toggle-button {
+        width: auto;
+        flex: 1;
+        text-align: center;
     }
 
-    .nav-bar a {
-        font-size: 14px;
-        padding: 8px 15px;
+    .main-text {
+        font-size: 1.2rem;
+    }
+
+    .content-section img {
+        max-width: 100%;
+        height: auto;
     }
 
     .comment-list {
@@ -392,9 +435,9 @@ button:hover {
     background-color: #009900;
 }
 
-/*
-    Login 
-*/
+
+
+/* Login */
 #login-container {
     position: absolute;
     top: 1rem;
@@ -408,9 +451,7 @@ button:hover {
 
 /* Wheel container */
 .wheelcontainer {
-    margin-top: 15%;
-    margin-bottom: 15%;
-    margin-left: 17%;
+    margin: 15% auto;
     position: relative;
     width: 400px;
     height: 400px;
@@ -493,8 +534,7 @@ button:hover {
     font-weight: 500;
 }
 
-/*Wheel winning notification animation*/
-
+/* Wheel winning notification animation */
 @keyframes bounceInOut {
     0% {
         transform: translateY(100%); /* Start off the bottom of the page */
@@ -507,12 +547,10 @@ button:hover {
     60% {
         transform: translateY(5%); /* Bounce back down slightly */
     }
-
     100% {
         transform: translateY(0); /* Settle into final position */
         opacity: 1; /* Fully visible */
     }
-
     /* Fade out */
     85% {
         opacity: 1;
