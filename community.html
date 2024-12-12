@@ -4,6 +4,159 @@
     <title>Community - GAME</title>
     <link href="css/style.css" rel="stylesheet">
     <meta name="google-signin-client_id" content="546329537209-jfhnp7tjokp1eu0e14g59rg54udl3lgn.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .column-left, .column-right {
+            flex: 1;
+            display: none; /* Hidden by default unless media queries adjust this */
+        }
+
+        .column-center {
+            flex: 2;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #fff;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background: #ff4d4d;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .main-text, .comment-section {
+            margin: 20px 0;
+        }
+
+        .comment-list {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            text-align: left;
+        }
+
+        .comment-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            resize: none;
+            margin-bottom: 10px;
+        }
+
+        .comment-form input {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .comment-form button {
+            padding: 10px 20px;
+            background: hsl(117, 94%, 42%);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comment-form button:hover {
+            background: #00cc25;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .column-left, .column-right {
+                display: none; /* Keep these sections hidden for small screens */
+            }
+
+            .column-center {
+                flex: 1;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .nav-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-bar a {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .comment-list {
+                max-width: 100%;
+            }
+
+            .comment-form {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
