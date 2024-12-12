@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scare Meter Survey</title>
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -73,6 +73,13 @@
         .feedback-message.error {
             color: #dc3545;
         }
+
+        #ghostContainer img {
+            margin-top: 20px;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -99,7 +106,47 @@
             <button type="submit" class="submit-button">Submit</button>
         </form>
         <div id="feedbackMessage" class="feedback-message"></div>
+        <div id="ghostContainer"></div> <!-- Placeholder for ghost image -->
     </div>
-    <script src="js/scaremeter.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("scareMeterForm");
+            const feedbackMessage = document.getElementById("feedbackMessage");
+            const ghostContainer = document.getElementById("ghostContainer");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault(); // Prevent form submission
+
+                // Get selected scare rating
+                const selectedRating = document.querySelector('input[name="scareRating"]:checked');
+
+                if (!selectedRating) {
+                    feedbackMessage.textContent = "Please select a scare rating before submitting.";
+                    feedbackMessage.className = "feedback-message error";
+                    feedbackMessage.style.display = "block";
+                    return;
+                }
+
+                const rating = selectedRating.value;
+
+                // Clear previous feedback and ghost image
+                ghostContainer.innerHTML = "";
+
+                // Display success feedback
+                feedbackMessage.textContent = `Thank you for rating the game a ${rating} out of 5!`;
+                feedbackMessage.className = "feedback-message success";
+                feedbackMessage.style.display = "block";
+
+                // Show ghost image if rating is 5
+                if (rating === "5") {
+                    const ghostImage = document.createElement("img");
+                    ghostImage.src = "https://1a-1791.com/s/s8/1/r/H/U/Z/rHUZi.qR4e-small-THE-MIMIC-GOT-MORE-INTENSE-.jpg"; // Ghost image link
+                    ghostImage.alt = "Ghost Image";
+
+                    ghostContainer.appendChild(ghostImage);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
