@@ -585,24 +585,16 @@ button:hover {
 
 /* Profile */
 /* Achievements */
-.achievements ul {
-    list-style: none; /* Remove default bullet points */
-    padding-left: 0; /* Remove default padding */
+ul {
+    list-style: none;
+    padding: 0;
+    text-wrap: nowrap;
+    margin-left: 0;
+    justify-content: center;
 }
 
-.achievements li {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-    margin-bottom: 10px; /* Space between list items */
-    margin-right: 40%;
-}
-
-.achievements input[type="checkbox"] {
-    margin-right: 10px; /* Space between checkbox and label */
-}
-
-.achievements label {
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
+li {
+    justify-content: center;
 }
 
 
