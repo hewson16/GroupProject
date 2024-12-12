@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage - Escape the Forest</title>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <title>Homepage - Escape the Forest</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+
+        function init() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init({
+                    client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com'
+                });
+            });
+        }
+
+        window.onload = init;
+    </script>
 </head>
 <body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <!-- Background Video -->
     <div class="video-background">
         <video autoplay loop muted id="backgroundVideo">
             <source src="videos/light mode.mp4" type="video/mp4">
-            <img src="images/day-night-cycle-fallback.jpg" alt="Background">
         </video>
     </div>
 
@@ -75,7 +97,7 @@
         <!-- YouTube Video Embed -->
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/gIPIyHgFhrY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <div class="video-message">Watch THE GAME's trailer</div>
+            <div class="video-message">Watch Escape the Forest's trailer</div>
         </div>
     </div>
 
