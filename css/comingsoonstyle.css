@@ -182,3 +182,28 @@ body {
     display: flex;
 }
 
+/* shilling test styling */
+
+.shilling-controls {
+    position: relative; /* Position wherever needed */
+    top: 150px; /* Adjust placement on the page */
+    left: 100px; /* Adjust placement relative to the navbar */
+    display: flex;
+    gap: 10px; /* Add space between buttons */
+}
+
+.shilling-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1e2a38;
+    border: 1px solid #2c3d53;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shilling-button:hover {
+    background-color: #2c3d53;
+}
+
