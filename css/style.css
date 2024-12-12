@@ -3,13 +3,13 @@
 /* Root colors and Darkmode */
 :root {
     --text-color: black;
-    --background-color: rgba(255, 255, 255, 0.7);;
-    --border-color: rgba(0, 0, 0, 0.7);;
+    --background-color: white;
+    --border-color: black;
 }  
 .darkmode {
     --text-color: white;
-    --background-color: rgba(0, 0, 0, 0.7);
-    --border-color: rgba(255, 255, 255, 0.7);;
+    --background-color: black;
+    --border-color: white;
 }
 
 /* Homepage specifics */
@@ -594,11 +594,17 @@ button:hover {
     display: flex;
     align-items: center; /* Align items vertically in the center */
     margin-bottom: 10px; /* Space between list items */
+    margin-right: 40%;
 }
 
 .achievements input[type="checkbox"] {
     margin-right: 10px; /* Space between checkbox and label */
 }
+
+.achievements label {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
 
 .profile-section {
     text-align: left;
@@ -670,7 +676,10 @@ button:hover {
     width: 100%;
 }
 
-.display-name input,
+.display-name input {
+    width: 180%;
+}
+
 .bio textarea {
     width: 100%; /* Ensure they stay within the container */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
