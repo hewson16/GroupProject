@@ -6,6 +6,7 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Homepage - Escape the Forest</title>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -14,7 +15,6 @@
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail());
         }
-
         function init() {
             gapi.load('auth2', function() {
                 gapi.auth2.init({
@@ -22,9 +22,9 @@
                 });
             });
         }
-
         window.onload = init;
     </script>
+
 </head>
 <body>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
