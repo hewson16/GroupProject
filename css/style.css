@@ -583,21 +583,30 @@ button:hover {
     animation: colorCycle 2s linear infinite;
 }
 
-/* Profile */
 /* Achievements */
-ul {
+.achievements ul {
     list-style: none;
-    padding: 0;
-    text-wrap: nowrap;
-    margin-left: 0;
-    justify-content: center;
+    padding-left: 0;
+    margin-top: 10px; 
 }
 
-li {
-    justify-content: center;
+.achievements li {
+    display: block;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.achievements input[type="checkbox"] {
+    margin-right: 10px; 
+}
+
+.achievements label {
+    display: inline-block;
+    white-space: nowrap; 
 }
 
 
+/* Profile */
 .profile-section {
     text-align: left;
     margin-top: 20px;
