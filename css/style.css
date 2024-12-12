@@ -4,11 +4,11 @@
 :root {
     --text-color: black;
     --background-color: white;
-    --border-color: black;
+    --border-color: #36393e;
 }  
 .darkmode {
     --text-color: white;
-    --background-color: black;
+    --background-color: #36393e;
     --border-color: white;
 }
 
@@ -195,8 +195,8 @@ body, html {
 }
 
 .column-center {
-    background-color: white;
-    color: black;
+    background-color: var(--background-color);
+    color: var(--text-color);
     width: 65%;  /* Adjusted width for better alignment */
     max-width: 800px;  /* Added max-width for better control */
     padding: 2rem;
@@ -244,7 +244,7 @@ body, html {
     padding: 10px 20px;
     background: #00cc00;
     border: none;
-    color: white;
+    color: var(--text-color);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -347,7 +347,7 @@ body, html {
     Submit a Ticket
 */
 .form-container {
-    background-color: white;
+    background-color: var(--background-color);
     padding: 2rem;
     border-radius: 0.5rem;
     width: 90%;
@@ -379,7 +379,7 @@ textarea {
 
 button {
     background-color: #28a745;
-    color: white;
+    color: var(--background-color);
     border: none;
     padding: 1rem;
     border-radius: 0.3rem;
@@ -396,8 +396,8 @@ button:hover {
 /* Comment Section */
 .comment-section {
     margin-top: 20px;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -409,10 +409,10 @@ button:hover {
 }
 
 .comment-list .comment {
-    background-color: #fff;
+    background-color: var(--background-color);
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
